@@ -1,0 +1,27 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Usuario;
+import com.example.demo.service.usuarioSevice;
+
+@RestController
+@RequestMapping("/usuarios")
+public class UsuarioController {
+	
+	@Autowired
+	private usuarioSevice usuarioService;
+	
+	@GetMapping
+	public ResponseEntity<List<Usuario>> findAll(){
+		
+		return ResponseEntity.ok(usuarioService.findAll());
+	}
+
+}

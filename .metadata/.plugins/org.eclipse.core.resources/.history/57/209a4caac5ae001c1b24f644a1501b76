@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@Controller
+public class Usuario {
+
+	@GetMapping("/hello")
+	public String hello() {
+		
+		return "Inicio do projeto";
+	}
+	
+}

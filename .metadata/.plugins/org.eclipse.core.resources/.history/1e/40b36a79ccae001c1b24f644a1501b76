@@ -1,0 +1,16 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.repository.UsuarioRepository;
+
+public class usuarioSevice {
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
+	public static Object findAll() {
+		return usuarioSevice.findAll();
+	}
+
+}
