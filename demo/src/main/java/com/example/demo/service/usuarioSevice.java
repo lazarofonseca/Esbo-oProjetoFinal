@@ -20,13 +20,16 @@ public class usuarioSevice {
 	}
 	
 	public UsuarioDTO insert(UsuarioDTO usuarioDTO) {
-		
 		Usuario usuario = new Usuario();
 		usuario = criaUsuario(usuarioDTO);
 		usuario = usuarioRepository.save(usuario);
-		
 		return new UsuarioDTO(usuario);
 		
+	}
+	
+	public Usuario findById(){
+	
+		return null;
 	}
 
 	private Usuario criaUsuario(UsuarioDTO usuarioDTO) {
