@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dto.UsuarioDTO;
 import com.example.demo.entity.Usuario;
 import com.example.demo.repository.UsuarioRepository;
+import com.example.demo.service.exception.EntityNotFoundException;
 
 @Service
 public class usuarioSevice {
@@ -27,9 +28,10 @@ public class usuarioSevice {
 		
 	}
 	
-	public Usuario findById(){
+	public Usuario findById(Long id){
 	
-		return null;
+		return usuarioRepository.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " não encontrado."));
 	}
 
 	private Usuario criaUsuario(UsuarioDTO usuarioDTO) {
